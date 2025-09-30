@@ -1,7 +1,23 @@
-import { Route, Routes } from "react-router-dom";
+import React from "react";
+import Header from "../../components/Header/Header.jsx";
+import Hero from "../../components/Hero/Hero.jsx";
+import About from "../../components/About/About.jsx";
+import Services from "../../components/Services/Services.jsx";
+import Team from "../../components/Team/Team.jsx";
+import Appointment from "../../components/Appointment/Appointment.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 
-const LayoutHome = () => {
-  return <div>LayoutHome</div>;
-};
 
-export default LayoutHome;
+export default function LayoutHome() {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <About />
+      <Services />
+      <Team />
+      <Appointment />
+      <Footer />
+    </>
+  );
+}
