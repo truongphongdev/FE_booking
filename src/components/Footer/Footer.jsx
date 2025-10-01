@@ -2,39 +2,60 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="py-5 bg-dark text-light">
-      <div className="container row">
-        <div className="col-md-3">
-          <h5>Patient Info</h5>
-          <ul className="list-unstyled">
-            <li><a href="#" className="text-decoration-none text-light">About Us</a></li>
-            <li><a href="#" className="text-decoration-none text-light">History</a></li>
-            <li><a href="#" className="text-decoration-none text-light">Testimonials</a></li>
-          </ul>
+    <footer className="bg-dark text-light pt-5 pb-4">
+      <div className="container">
+        <div className="row gy-4">
+
+          {/* Thông tin bệnh nhân */}
+          <div className="col-md-3">
+            <h5 className="fw-bold mb-3">Thông Tin Bệnh Nhân</h5>
+            <ul className="list-unstyled">
+              <li><a href="#" className="text-light text-decoration-none">Giới Thiệu</a></li>
+              <li><a href="#" className="text-light text-decoration-none">Lịch Sử</a></li>
+              <li><a href="#" className="text-light text-decoration-none">Phản Hồi</a></li>
+            </ul>
+          </div>
+
+          {/* Dịch vụ */}
+          <div className="col-md-3">
+            <h5 className="fw-bold mb-3">Dịch Vụ</h5>
+            <ul className="list-unstyled">
+              <li><a href="#" className="text-light text-decoration-none">Chăm Sóc Phòng Ngừa</a></li>
+              <li><a href="#" className="text-light text-decoration-none">Cấy Ghép Răng</a></li>
+              <li><a href="#" className="text-light text-decoration-none">Niềng Răng Thẩm Mỹ</a></li>
+            </ul>
+          </div>
+
+          {/* Liên hệ */}
+          <div className="col-md-3">
+            <h5 className="fw-bold mb-3">Liên Hệ</h5>
+            <p className="mb-1">Số 2, Xuân Phương, Tu Hoang, Bắc Từ Liêm. Hà Nội</p>
+            <p className="mb-1">📞 212-000-2299</p>
+            <p className="mb-0">✉️ info@smilecare.com</p>
+          </div>
+
+          {/* Đăng ký nhận tin */}
+          <div className="col-md-3">
+            <h5 className="fw-bold mb-3">Đăng Ký Nhận Tin</h5>
+            <form>
+              <input
+                type="email"
+                className="form-control mb-2"
+                placeholder="Nhập email của bạn"
+              />
+              <button className="btn btn-primary w-100">Gửi</button>
+            </form>
+          </div>
         </div>
-        <div className="col-md-3">
-          <h5>Services</h5>
-          <ul className="list-unstyled">
-            <li><a href="#" className="text-decoration-none text-light">Preventive Care</a></li>
-            <li><a href="#" className="text-decoration-none text-light">Implants</a></li>
-            <li><a href="#" className="text-decoration-none text-light">Cosmetic Braces</a></li>
-          </ul>
-        </div>
-        <div className="col-md-3">
-          <h5>Contact</h5>
-          <p>100 West Street, New York, NY</p>
-          <p>Phone: 212-000-2299</p>
-          <p>Email: info@dentapro.com</p>
-        </div>
-        <div className="col-md-3">
-          <h5>Subscribe</h5>
-          <form>
-            <input type="email" className="form-control mb-2" placeholder="Your Email" />
-            <button className="btn btn-primary w-100">Submit</button>
-          </form>
-        </div>
+
+        {/* Đường kẻ phân cách */}
+        <hr className="border-light my-4" />
+
+        {/* Bản quyền */}
+        <p className="text-center mb-0">
+          &copy; 2025 <strong>SmileCare</strong>. Đã đăng ký bản quyền.
+        </p>
       </div>
-      <p className="text-center mt-4 mb-0">&copy; 2025 DentalCA. All rights reserved.</p>
     </footer>
   );
 }

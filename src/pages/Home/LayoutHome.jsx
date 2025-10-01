@@ -4,7 +4,6 @@ import Hero from "../../components/Hero/Hero.jsx";
 import About from "../../components/About/About.jsx";
 import Services from "../../components/Services/Services.jsx";
 import Team from "../../components/Team/Team.jsx";
-import Appointment from "../../components/Appointment/Appointment.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 
 
@@ -16,7 +15,6 @@ export default function LayoutHome() {
       <About />
       <Services />
       <Team />
-      <Appointment />
       <Footer />
     </>
   );

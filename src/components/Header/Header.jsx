@@ -1,19 +1,20 @@
 import React from "react";
-import "./Header.css"
+import logo from "./logo4.png";
+
 export default function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-info-subtle shadow-sm">
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-info-subtle shadow-sm"
+      style={{ paddingTop: "0.3rem", paddingBottom: "0.3rem" }} // Giảm padding
+    >
       <div className="container">
-        {/* Logo + Brand */}
-        <a className="navbar-brand fw-bold d-flex align-items-center  text-primary" href="#">
+        {/* Logo to, cân chỉnh padding */}
+        <a className="navbar-brand d-flex align-items-center py-0" href="#">
           <img
-            src="/vite.svg" 
-            width="40"
-            height="40"
-            className="d-inline-block align-text-top me-2"
+            src={logo}
             alt="SmileCare Logo"
+            style={{ height: "70px", width: "auto" }} // Tăng chiều cao logo
           />
-          SmileCare
         </a>
 
         {/* Toggle button */}
@@ -30,17 +31,19 @@ export default function Header() {
         </button>
 
         {/* Menu */}
-        <div className="collapse navbar-collapse " id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item"><a className="nav-link" href="#">Giới thiệu</a></li>
             <li className="nav-item"><a className="nav-link" href="#">Bác sĩ</a></li>
             <li className="nav-item"><a className="nav-link" href="#">Dịch vụ</a></li>
             <li className="nav-item"><a className="nav-link" href="#">Bảng giá</a></li>
             <li className="nav-item"><a className="nav-link" href="#">Đánh giá</a></li>
-            <li className="nav-item">
+            <li className="nav-item ms-2">
+              <a className="btn btn-primary" href="#book">Đặt lịch hẹn</a>
             </li>
-              <a className="btn btn-primary ms-2" href="#book">Đặt lịch hẹn</a>
-              <a className="btn btn-primary ms-2" href="#dangnhap">Đăng nhập</a>
+            <li className="nav-item ms-2">
+              <a className="btn btn-primary" href="#dangnhap">Đăng nhập</a>
+            </li>
           </ul>
         </div>
       </div>

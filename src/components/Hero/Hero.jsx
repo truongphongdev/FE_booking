@@ -1,32 +1,58 @@
 import React from "react";
-import anhnen from "./anhnen.avif"
+import anhnen from "./anhnen.avif";
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <section
-      className=" bg-light"
+      className="d-flex align-items-center position-relative"
       style={{
-        backgroundImage: `url(${anhnen})`,
-        backgroundSize: "cover",      // ảnh phủ kín
-        backgroundPosition: "center", // canh giữa
-        backgroundRepeat: "no-repeat", // không lặp
-        minHeight: "60vh"
+        minHeight: "80vh",
+        backgroundColor: "#ffffff", // nền trắng
+        padding: "80px 0",
+        overflow: "hidden",
+        color: "#222222", // chữ đen xám
       }}
     >
-      <div className="container d-flex flex-column flex-lg-row align-items-center">
-        <div className="text-center text-lg-start pe-lg-5 text-white">
-          <h1 className="display-4 fw-bold">
-            Nụ cười với sự tự tin.<br />Sống với sự thoải mái.
-          </h1>
-          <p className="lead">
-            Trải nghiệm chăm sóc nha khoa chuyên nghiệp với công nghệ hiện đại
-            và một môi trường thân thiện.
-          </p>
-          <a href="#book" className="btn btn-primary btn-lg me-2">Book an Appointment</a>
-          <a href="#services" className="btn btn-outline-secondary btn-lg">Our Services</a>
+      {/* Bỏ overlay mờ đi vì nền trắng rồi */}
+      <div className="container position-relative" style={{ zIndex: 2 }}>
+        <div className="row align-items-center">
+          {/* Text content */}
+          <div className="col-lg-6 mb-4 mb-lg-0">
+            <h1 className="display-4 fw-bold mb-3" style={{ color: "#3ec9c9ff" }}>
+              Nụ cười với sự tự tin<br />
+              Sống với sự thoải mái
+            </h1>
+            <p className="lead mb-4" style={{ color: "#000000ff" }}>
+              Trải nghiệm chăm sóc nha khoa chuyên nghiệp với công nghệ hiện đại
+              và một môi trường thân thiện.
+            </p>
+            <div className="d-flex flex-wrap gap-3">
+              
+              <a
+                href="#services"
+                className="btn btn-primary btn-lg fw-semibold shadow"
+              >
+                Dịch vụ của chúng tôi
+              </a>
+            </div>
+          </div>
+
+          {/* Ảnh */}
+          <div className="col-lg-6 text-center">
+            <div className="p-3 bg-white rounded-4 shadow-lg d-inline-block">
+              <img
+                src={anhnen}
+                alt="Nha sĩ"
+                className="img-fluid rounded-4"
+                style={{
+                  maxHeight: "420px",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
