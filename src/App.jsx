@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import LayoutHome from "./pages/Home/LayoutHome";
 import { ToastContainer, Bounce } from "react-toastify";
 import Admin from "./pages/Admin/Admin";
+import UserPage from "./pages/UserPage/UserPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/admin/*" element={<Admin />} />
         <Route path="/account/*" element={<LayoutLogin />} />
         <Route path="/*" element={<LayoutHome />} />
+        <Route path="/account" element={<UserPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer
