@@ -1,5 +1,5 @@
 import React from "react";
-import anhrang from "./khamrang.jpg";
+import anhrang from "../../assets/images/khamrang.jpg";
 import "./Services.css";
 
 export default function Services() {

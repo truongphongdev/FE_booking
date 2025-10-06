@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Login from "../../components/Login/Login";
 import SignUp from "../../components/SignUp/SignUp";
 import NotFound from "../NotFound";
-
 const LayoutLogin = () => {
   return (
     <Routes>

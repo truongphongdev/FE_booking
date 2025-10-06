@@ -1,9 +1,9 @@
 import React from "react";
-import Dr_David_Lee from "./Dr_David_Lee.jpg";
-import Dr_Amanda_Reed from "./Dr_Amanda_Reed.jpg"
-import Dr_Emily_Clark from "./Dr_Emily_Clark.jpg"
-import khachhang1 from "./khachhang3.jpg"
-import khachhang2 from "./khachhang4.jpg"
+import Dr_David_Lee from "../../assets/images/Dr_David_Lee.jpg"
+import Dr_Amanda_Reed from "../../assets/images/Dr_Amanda_Reed.jpg"
+import Dr_Emily_Clark from "../../assets/images/Dr_Emily_Clark.jpg"
+import khachhang1 from "../../assets/images/khachhang3.jpg"
+import khachhang2 from "../../assets/images/khachhang4.jpg"
 
 export default function TeamAndTestimonials() {
   return (

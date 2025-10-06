@@ -1,7 +1,8 @@
 import React from "react";
-import anhnen from "./anhnen.avif";
+import anhnen from "../../assets/images/anhnen.avif";
+import { Link } from "react-router-dom";
 
-export default function HeroSection() {
+export default function Hero() {
   return (
     <section
       className="d-flex align-items-center position-relative"
@@ -28,12 +29,12 @@ export default function HeroSection() {
             </p>
             <div className="d-flex flex-wrap gap-3">
               
-              <a
-                href="#services"
+              <Link
+                to="/Hero"
                 className="btn btn-primary btn-lg fw-semibold shadow"
               >
                 Dịch vụ của chúng tôi
-              </a>
+              </Link>
             </div>
           </div>
 
