@@ -20,7 +20,7 @@ const Doctor = () => {
   ];
 
   return (
-    <div style={{ marginTop: "80px" }}>
+    <div style={{ marginTop: "100px" }}>
       <div className="container my-5">
         <div className="text-center mb-5">
           <h2 className="fw-bold text-primary">Đội ngũ Bác sĩ</h2>

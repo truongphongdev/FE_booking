@@ -1,13 +1,16 @@
 import React from "react";
 import Header from "../../components/Header/Header.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-import HeroDetail from "../../components/Hero/HeroDetail/HeroDetail.jsx"
-export default function LayoutHero() {
+import ServicesDetail from "../../components/Services/ServiceDetail/ServiceDetail.jsx";
+
+const ServicePage = () => {
   return (
     <>
       <Header />
-        <HeroDetail />
+      <ServicesDetail/>
       <Footer />
     </>
   );
-}
+};
+
+export default ServicePage;

@@ -1,7 +1,7 @@
 import React from "react";
-import service1 from "../../../assets/images/anh_herodetail1.jpeg";
-import service2 from "../../../assets/images/anh_herodetail2.jpeg";
-import service3 from "../../../assets/images/anh_herodetail3.jpeg";
+import service1 from "../../../assets/images/anhservice.png";
+import service2 from "../../../assets/images/anh_herodetail5.png";
+import service3 from "../../../assets/images/anh_herodetail6.png";
 import service4 from "../../../assets/images/anh_herodetail4.webp";
 
 export default function ServicesDetail() {

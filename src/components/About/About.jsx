@@ -1,6 +1,6 @@
 import React from "react";
 import anhNhaSi from "../../assets/images/anhnhasi.png";
-
+import { Link } from "react-router-dom";
 export default function About() {
   return (
     <section className="py-5 position-relative bg-light">
@@ -64,9 +64,9 @@ export default function About() {
               </div>
             </div>
 
-            <a href="#booking" className="btn btn-primary mt-3 px-4">
+            <Link to ="/about" className="btn btn-primary mt-3 px-4">
               Xem chi tiết
-            </a>
+            </Link>
           </div>
         </div>
       </div>

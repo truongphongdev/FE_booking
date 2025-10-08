@@ -11,7 +11,7 @@ const LayoutAll = ({ children }) => {
             background: "linear-gradient(135deg, #00aaff 0%, #ffffff 100%)",
           }}
         >
-          <h1 className="fw-bold display-4 mb-4">Welcome to SmileCare</h1>
+          <h2 className="fw-bold display-4 mb-4">Welcome to SmileCare</h2>
           <p className="lead">
             Chăm sóc nụ cười trọn vẹn - Đặt lịch dễ dàng, dịch vụ nha khoa hiện
             đại, an toàn, tận tâm, mang lại tự tin và sức khỏe răng miệng

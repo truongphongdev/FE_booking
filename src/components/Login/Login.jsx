@@ -10,18 +10,18 @@ const Login = () => {
 
   return (
     <LayoutAll>
-      {/* right */}
-      <h2 className="text-center text-primary mb-4">USER LOGIN</h2>
+      {/* Tiêu đề */}
+      <h2 className="text-center text-primary mb-4">ĐĂNG NHẬP</h2>
       <form>
         {/* email/username */}
         <div className="mb-3 input-group">
           <span className="input-group-text">
             <i className="bi bi-person"></i>
           </span>
-          <input type="text" className="form-control" placeholder="Email" />
+          <input type="text" className="form-control" placeholder="Email hoặc Tên đăng nhập" />
         </div>
 
-        {/* password */}
+        {/* mật khẩu */}
         <div className="mb-3 input-group">
           <span className="input-group-text">
             <i className="bi bi-lock"></i>
@@ -29,24 +29,24 @@ const Login = () => {
           <input
             type="password"
             className="form-control"
-            placeholder="Password"
+            placeholder="Mật khẩu"
           />
         </div>
 
-        {/* remember me and forgot password */}
+        {/* ghi nhớ và quên mật khẩu */}
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div className="form-check">
             <input type="checkbox" className="form-check-input" id="remember" />
             <label className="form-check-label" htmlFor="remember">
-              Remember
+              Ghi nhớ
             </label>
           </div>
           <Link to="/forgot-password" className="text-decoration-none">
-            Forgot password?
+            Quên mật khẩu?
           </Link>
         </div>
 
-        {/* login */}
+        {/* nút đăng nhập */}
         <button
           type="submit"
           className="btn w-100 text-white mb-3"
@@ -55,17 +55,17 @@ const Login = () => {
             border: "none",
           }}
         >
-          LOGIN
+          ĐĂNG NHẬP
         </button>
         <hr />
 
-        {/* sign up */}
+        {/* nút đăng ký */}
         <button
           type="button"
           className="btn btn-info w-100 mt-3 text-white"
           onClick={handleSignUpClick}
         >
-          SIGN UP
+          ĐĂNG KÝ
         </button>
       </form>
     </LayoutAll>

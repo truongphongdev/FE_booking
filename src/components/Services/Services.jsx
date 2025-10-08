@@ -1,7 +1,7 @@
 import React from "react";
 import anhrang from "../../assets/images/khamrang.jpg";
 import "./Services.css";
-
+import { Link } from "react-router-dom";
 export default function Services() {
   return (
     <section className="py-5 bg-white" id="services">
@@ -78,9 +78,10 @@ export default function Services() {
                 </div>
               </li>
             </ul>
-            <a href="#booking" className="btn btn-outline-primary mt-3 px-4">
+            <Link to ="/whyus"  className="btn btn-outline-primary mt-3 px-4">
               Tìm hiểu thêm
-            </a>
+            </Link>
+            
           </div>
         </div>
       </div>

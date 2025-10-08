@@ -36,11 +36,11 @@ export default function Header() {
             <li className="nav-item">
               <Link to="/" className="nav-link fw-bold text-primary">Trang chủ</Link>
             </li>
-            <li className="nav-item"><Link to="/hero" className="nav-link" >Về chúng tôi</Link></li>
+            <li className="nav-item"><Link to="/about" className="nav-link" >Về chúng tôi</Link></li>
             <li className="nav-item"><Link to="/doctor" className="nav-link" >Bác sĩ</Link></li>
-            <li className="nav-item"><a className="nav-link" href="#">Dịch vụ</a></li>
-            <li className="nav-item"><a className="nav-link" href="#">Bảng giá</a></li>
-            <li className="nav-item"><a className="nav-link" href="#">Đánh giá</a></li>
+            <li className="nav-item"><Link to= "/service" className="nav-link" >Dịch vụ</Link></li>
+            <li className="nav-item"><Link to = "/price" className="nav-link" >Bảng giá</Link></li>
+            <li className="nav-item"><Link to ="/feedback" className="nav-link" >Đánh giá</Link></li>
             <li className="nav-item ms-2">
               <Link to="/booking" className="btn btn-primary">
                 Đặt lịch hẹn

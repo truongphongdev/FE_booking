@@ -16,7 +16,6 @@ const SignUp = () => {
 
   // validate input
   const isValidInput = () => {
-    // check empty fields
     if (
       !fullName ||
       !birth ||
@@ -27,56 +26,52 @@ const SignUp = () => {
       !confirmPassword ||
       !address
     ) {
-      toast.error("Please fill in all fields.");
+      toast.error("Vui lòng điền đầy đủ thông tin.");
       return false;
     }
 
-    // check email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      toast.error("Invalid email format.");
+      toast.error("Email không hợp lệ.");
       return false;
     }
 
-    // check phone format
     const phoneRegex = /^\d{10,15}$/;
     if (!phoneRegex.test(phone)) {
-      toast.error("Invalid phone number format.");
+      toast.error("Số điện thoại không hợp lệ.");
       return false;
     }
 
     // Password: ít nhất 8 ký tự, có ít nhất 1 chữ, 1 số, 1 ký tự đặc biệt
     const passwordRegex =
-      /^(?=.*[zA-Za-])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!passwordRegex.test(password)) {
-      toast.error("Invalid Password format.");
+      toast.error("Mật khẩu phải tối thiểu 8 ký tự, gồm chữ, số và ký tự đặc biệt.");
       return false;
     }
 
     if (password !== confirmPassword) {
-      toast.error("Passwords do not match.");
+      toast.error("Mật khẩu xác nhận không khớp.");
       return false;
     }
 
     return true;
   };
 
-  // handle register
   const handleRegister = (e) => {
     e.preventDefault();
-    // check validate
     if (!isValidInput()) return;
 
-    toast.success("Register successfully!");
+    toast.success("Đăng ký thành công!");
     let userData = {
-      fullName: fullName,
-      birth: birth,
-      gender: gender,
-      email: email,
-      phone: phone,
-      password: password,
-      confirmPassword: confirmPassword,
-      address: address,
+      fullName,
+      birth,
+      gender,
+      email,
+      phone,
+      password,
+      confirmPassword,
+      address,
     };
     console.log("User Data: ", userData);
   };
@@ -89,9 +84,9 @@ const SignUp = () => {
 
   return (
     <LayoutAll>
-      <h2 className="text-center text-primary mb-4">SIGN UP</h2>
+      <h2 className="text-center text-primary mb-4">ĐĂNG KÝ NGƯỜI DÙNG</h2>
       <form>
-        {/* full name */}
+        {/* Họ và tên */}
         <div className="mb-3 input-group">
           <span className="input-group-text">
             <i className="bi bi-person"></i>
@@ -99,7 +94,7 @@ const SignUp = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="Full Name"
+            placeholder="Họ và tên"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
           />
@@ -153,7 +148,8 @@ const SignUp = () => {
             </div>
           </div>
         </div>
-        {/* email */}
+
+        {/* Email */}
         <div className="mb-3 input-group">
           <span className="input-group-text">
             <i className="bi bi-envelope"></i>
@@ -167,21 +163,21 @@ const SignUp = () => {
           />
         </div>
 
-        {/* phone */}
+        {/* Số điện thoại */}
         <div className="mb-3 input-group">
           <span className="input-group-text">
-            <i className="bi bi-person"></i>
+            <i className="bi bi-telephone"></i>
           </span>
           <input
             type="text"
             className="form-control"
-            placeholder="Phone"
+            placeholder="Số điện thoại"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
 
-        {/* password */}
+        {/* Mật khẩu */}
         <div className="mb-3 input-group">
           <span className="input-group-text">
             <i className="bi bi-lock"></i>
@@ -189,13 +185,13 @@ const SignUp = () => {
           <input
             type="password"
             className="form-control"
-            placeholder="Password"
+            placeholder="Mật khẩu"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
-        {/* confirm password */}
+        {/* Xác nhận mật khẩu */}
         <div className="mb-3 input-group">
           <span className="input-group-text">
             <i className="bi bi-lock"></i>
@@ -203,29 +199,29 @@ const SignUp = () => {
           <input
             type="password"
             className="form-control"
-            placeholder="Confirm password"
+            placeholder="Xác nhận mật khẩu"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
 
-        {/* address */}
+        {/* Địa chỉ */}
         <div className="mb-3 input-group ">
           <span className="input-group-text">
             <i className="bi bi-house"></i>
           </span>
           <textarea
-            class="form-control"
+            className="form-control"
             id="address"
             name="address"
             rows="4"
-            placeholder="Address"
+            placeholder="Địa chỉ"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           ></textarea>
         </div>
 
-        {/* register */}
+        {/* Nút đăng ký */}
         <button
           type="button"
           className="btn btn-success w-100 mt-3 text-white mb-3"
@@ -235,13 +231,13 @@ const SignUp = () => {
           }}
           onClick={handleRegister}
         >
-          REGISTER
+          ĐĂNG KÝ
         </button>
 
         <hr />
 
         <Link to="../login" className="btn btn-info w-100 mt-3 text-white">
-          BACK TO LOGIN
+          QUAY LẠI ĐĂNG NHẬP
         </Link>
       </form>
     </LayoutAll>

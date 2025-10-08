@@ -27,7 +27,7 @@ export default function ForgotPassword() {
               borderRadius: "20px 0 0 20px",
             }}
           >
-            <h1 className="fw-bold mb-3">Forgot Password?</h1>
+            <h1 className="fw-bold mb-3">Quên Mật Khẩu?</h1>
             <p>
               Nhập địa chỉ email của bạn để nhận liên kết khôi phục mật khẩu.  
               Chúng tôi sẽ giúp bạn truy cập lại tài khoản nhanh nhất.
@@ -40,7 +40,7 @@ export default function ForgotPassword() {
             style={{ borderRadius: "0 20px 20px 0", boxShadow: "0 0 20px rgba(0,0,0,0.1)" }}
           >
             <h3 className="text-center mb-4" style={{ color: "#3ec9c9" }}>
-              RESET PASSWORD
+              ĐẶT LẠI MẬT KHẨU
             </h3>
 
             <form onSubmit={handleSubmit}>
