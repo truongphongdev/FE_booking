@@ -6,7 +6,6 @@ import Services from "../../components/Services/Services.jsx";
 import Team from "../../components/Team/Team.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 
-
 export default function LayoutHome() {
   return (
     <>

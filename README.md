@@ -11,6 +11,9 @@
 
 # 2. Các công cụ sử dụng
 
+    - axios:
+    - toast: hiển thị thông báo
+
 # 3. Mock API
 
     - API là đường link URL, nằm ở backend,
