@@ -45,12 +45,13 @@ const SignUp = () => {
       return false;
     }
 
-    // check password match
-    // const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    // if (!passwordRegex.test(password)) {
-    //   toast.error("Invalid Password format.");
-    //   return false;
-    // }
+    // Password: ít nhất 8 ký tự, có ít nhất 1 chữ, 1 số, 1 ký tự đặc biệt
+    const passwordRegex =
+      /^(?=.*[zA-Za-])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      toast.error("Invalid Password format.");
+      return false;
+    }
 
     if (password !== confirmPassword) {
       toast.error("Passwords do not match.");
@@ -63,7 +64,9 @@ const SignUp = () => {
   // handle register
   const handleRegister = (e) => {
     e.preventDefault();
+    // check validate
     if (!isValidInput()) return;
+
     toast.success("Register successfully!");
     let userData = {
       fullName: fullName,
@@ -77,6 +80,12 @@ const SignUp = () => {
     };
     console.log("User Data: ", userData);
   };
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/demo").then((dataDemo) => {
+      console.log("check data axios >>>>>>>", dataDemo.data);
+    });
+  }, []);
 
   return (
     <LayoutAll>
