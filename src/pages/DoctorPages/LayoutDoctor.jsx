@@ -1,18 +1,18 @@
 import React from "react";
 import Header from "../../components/Header/Header.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-import Booking from "../../components/Booking/Booking.jsx";
+import Doctor from "../../components/Doctor/Doctor.jsx"
 
-const BookingPage = () => {
+const DoctorPage = () => {
   return (
     <>
       <Header />
-      <main className="min-h-screen flex flex-col justify-center bg-blue-50 py-10">
-        <Booking />
+      <main className="min-h-screen flex flex-col justify-center bg-blue-50 py-10c ">
+        <Doctor/>
       </main>
       <Footer />
     </>
   );
 };
 
-export default BookingPage;
+export default DoctorPage;

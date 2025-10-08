@@ -5,17 +5,18 @@ import { Route, Routes } from "react-router-dom";
 import LayoutHome from "./pages/Home/LayoutHome";
 import LayoutHero from "./pages/HeroPages/LayoutHero";
 import ForgotPassword from "./pages/LayoutLogin/ForgotPassword";
-import BookingForm from "./pages/Booking/BookingPage"
-
+import BookingForm from "./pages/BookingPages/LayoutBooking"
+import DoctorPage from "./pages/DoctorPages/LayoutDoctor"
 function App() {
   return (
     <>
       <Routes>
         <Route path="/account/*" element={<LayoutLogin />} />
         <Route path="/*" element={<LayoutHome />} />
-        <Route path="/Hero" element={<LayoutHero />} />
+        <Route path="/hero" element={<LayoutHero />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/booking" element={<BookingForm />} />
+        <Route path="/doctor" element ={<DoctorPage/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
