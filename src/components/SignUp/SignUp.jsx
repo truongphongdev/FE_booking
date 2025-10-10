@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LayoutAll from "../../pages/LayoutLogin/LayoutAll";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { registerNewUser } from "../../services/userService";
 
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
@@ -61,26 +62,31 @@ const SignUp = () => {
     return true;
   };
 
-  // handle register
-  const handleRegister = (e) => {
-    e.preventDefault();
-    // check validate
-    if (!isValidInput()) return;
+  const navigate = useNavigate();
 
-    toast.success("Register successfully!");
-    let userData = {
+  // handle register
+  const handleRegister = async () => {
+    const isValid = isValidInput();
+
+    let data = {
       fullName: fullName,
-      birth: birth,
-      gender: gender,
+      gender: gender === "male" ? 1 : 0,
+      birthDate: birth,
       email: email,
-      phone: phone,
+      phoneNumber: phone,
       password: password,
-      confirmPassword: confirmPassword,
       address: address,
     };
-    console.log("User Data: ", userData);
+
+    if (isValid === true) {
+      const createUser = await registerNewUser(data);
+      console.log(">>>>>>>>check : ", createUser.data);
+      toast.success("Tạo tài khoản thành công!");
+      navigate("/account/login");
+    }
   };
 
+  // test api
   useEffect(() => {
     axios.get("http://localhost:8080/api/demo").then((dataDemo) => {
       console.log("check data axios >>>>>>>", dataDemo.data);

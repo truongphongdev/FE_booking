@@ -1,11 +1,40 @@
 import LayoutAll from "../../pages/LayoutLogin/LayoutAll";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { loginUser } from "../../services/userService";
 
 const Login = () => {
   let navigate = useNavigate();
 
   const handleSignUpClick = () => {
     navigate("../signup");
+  };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault(); // Ngăn reload trang
+
+    if (!email || !password) {
+      toast.error("Please enter your email and password");
+      return;
+    }
+    try {
+      const res = await loginUser(email, password);
+
+      console.log(res.data);
+      if (res && +res.data.EC === 0) {
+        toast.success("Login successful!");
+        navigate("../../home");
+      } else {
+        toast.error(res?.message || "Login failed!");
+      }
+    } catch (err) {
+      toast.error("Server error. Please try again later.");
+      console.error(err);
+    }
   };
 
   return (
@@ -18,7 +47,13 @@ const Login = () => {
           <span className="input-group-text">
             <i className="bi bi-person"></i>
           </span>
-          <input type="text" className="form-control" placeholder="Email" />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
         {/* password */}
@@ -30,6 +65,8 @@ const Login = () => {
             type="password"
             className="form-control"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
@@ -54,6 +91,7 @@ const Login = () => {
             background: "linear-gradient(135deg, #00aaff 0%, #ffffff 100%)",
             border: "none",
           }}
+          onClick={handleLogin}
         >
           LOGIN
         </button>
