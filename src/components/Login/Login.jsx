@@ -29,11 +29,17 @@ const Login = () => {
         toast.success("Login successful!");
         navigate("../../home");
       } else {
-        toast.error(res?.message || "Login failed!");
+        toast.error(res.data.EM || "Login failed!");
       }
     } catch (err) {
       toast.error("Server error. Please try again later.");
       console.error(err);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.code === "Enter" && event.charCode === 13) {
+      handleLogin();
     }
   };
 
@@ -92,6 +98,7 @@ const Login = () => {
             border: "none",
           }}
           onClick={handleLogin}
+          onKeyDown={(event) => handleKeyDown(event)}
         >
           LOGIN
         </button>
